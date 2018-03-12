@@ -1,18 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Anytime Train Schedule</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+    <script src="/js/moment.min.js"></script>
+
+
 </head>
-<body>
-    
+
+<body class="container">
+
+    <div class="row">
+
+        <header class="col-sm-12 logo">
+
+            <h1 id="logoTitle">
+                Anytime is Train Time
+            </h1>
+        </header>
 
 
-    <script src="assets/javascript/app.js"></script>
+    </div>
+    <div class="row">
+
+
+        <section class="col-sm-12" id="tableContainer">
+            <div class="panel panel-primary">
+                <div class="panel-heading" id="topTable">
+                    <h3 class="panel-title" id="pnlTitle">Current Train Schedule</h3>
+                </div>
+                <div class="panel-body">
+
+                    <table class="table table-hover" id="schedule">
+                        <thead>
+                            <tr id="tLineCont">
+                                <th class="titleLine">Destination</th>
+                                <th class="titleLine">Train Name</th>
+                                <th class="titleLine">Frequency (min)</th>
+                                <th class="titleLine">Next Arrival</th>
+                                <th class="titleLine">Minutes Away</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="schedContainer">
+                            <tr id="row1">
+                                <td class="tableData">test data</td>
+                                <td class="tableData">test data</td>
+                                <td class="tableData">test data</td>
+                                <td class="tableData">test data</td>
+                                <td class="tableData">test data</td>
+                            </tr>
+
+                            <tr>
+                                <td class="tableData">test data</td>
+                                <td class="tableData">test data</td>
+                                <td class="tableData">test data</td>
+                                <td class="tableData">test data</td>
+                                <td class="tableData">test data</td>
+                            </tr>
+                            <tr>
+                                <td class="tableData">test data</td>
+                                <td class="tableData">test data</td>
+                                <td class="tableData">test data</td>
+                                <td class="tableData">test data</td>
+                                <td class="tableData">test data</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </section>
+        </div>
+        <div class="row">
+
+
+            <main class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title" id="formTitle">Add Train</h1>
+
+                </div>
+
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name" id="lblName">Train Name</label>
+                            <br>
+                            <input type="text" id="name">
+                        </div>
+                        <div class="form-group">
+
+                            <label for="destination" id="lblDestination">Destination</label>
+                            <br>
+                            <input type="text" id="destination">
+
+                        </div>
+                        <div class="form-group">
+
+                            <label for="firstTime" id="lblFirstTime">First Train Time (HH:mm -military time)</label>
+                            <br>
+                            <input type="text" id="firstTime">
+
+                        </div>
+                        <div class="form-group">
+
+                            <label for="frequency" id="lblFrequency">Frequency (min)</label>
+                            <br>
+                            <input type="text" id="frequency">
+
+
+                        </div>
+
+                         <button class="btn btn-primary" id="btnSubmit" type="submit">Submit</button>
+                    </form>
+                </div>
+
+
+            </main>
+
+
+
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery.js"></script>
+
+        <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
