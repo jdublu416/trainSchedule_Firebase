@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 
-    <script src="/js/moment.min.js"></script>
+
+    <!-- <script src="/js/moment.min.js"></script> -->
 
 
 </head>
@@ -55,7 +56,7 @@
                         </thead>
 
                         <tbody id="schedContainer">
-                            <tr id="row1">
+                            <!-- <tr id="row1">
                                 <td class="tableData">test data</td>
                                 <td class="tableData">test data</td>
                                 <td class="tableData">test data</td>
@@ -76,7 +77,7 @@
                                 <td class="tableData">test data</td>
                                 <td class="tableData">test data</td>
                                 <td class="tableData">test data</td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -96,27 +97,27 @@
                         <div class="form-group">
                             <label for="name" id="lblName">Train Name</label>
                             <br>
-                            <input type="text" id="name">
+                            <input class= "form-control" type="text" id="name" autofocus="autofocus">
                         </div>
                         <div class="form-group">
 
                             <label for="destination" id="lblDestination">Destination</label>
                             <br>
-                            <input type="text" id="destination">
+                            <input class= "form-control" type="text" id="destination">
 
                         </div>
                         <div class="form-group">
 
                             <label for="firstTime" id="lblFirstTime">First Train Time (HH:mm -military time)</label>
                             <br>
-                            <input type="text" id="firstTime">
+                            <input class= "form-control" type="text" id="firstTime">
 
                         </div>
                         <div class="form-group">
 
                             <label for="frequency" id="lblFrequency">Frequency (min)</label>
                             <br>
-                            <input type="text" id="frequency">
+                            <input class= "form-control" type="text" id="frequency">
 
 
                         </div>
