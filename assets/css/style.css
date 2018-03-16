@@ -38,3 +38,7 @@ form input {
 label {
     margin-bottom: 5px;
 }
+
+.table-data{
+  text-align: center;
+}
