@@ -25,19 +25,15 @@
 <body class="container">
 
     <div class="row">
-
-        <header class="col-sm-12 logo">
-
-            <h1 id="logoTitle">
-                Anytime is Train Time
-            </h1>
-        </header>
-
-
+        <div class="col-sm-12">
+            <header class="logo">
+                <h1 id="logoTitle">
+                    Anytime is Train Time
+                </h1>
+            </header>
+        </div>
     </div>
     <div class="row">
-
-
         <section class="col-sm-12" id="tableContainer">
             <div class="panel panel-primary">
                 <div class="panel-heading" id="topTable">
@@ -56,66 +52,64 @@
                             </tr>
                         </thead>
 
-                        <tbody id="schedContainer"></tbody>   
-                     
+                        <tbody id="schedContainer"></tbody>
+
                     </table>
                 </div>
+            </div>
         </section>
-        </div>
-        <div class="row">
+    </div>
 
+
+    <div class="row">
+        <div class="col-sm-12">
 
             <main class="panel panel-primary">
                 <div class="panel-heading">
                     <h1 class="panel-title" id="formTitle">Add Train</h1>
 
                 </div>
-
                 <div class="panel-body">
                     <form>
                         <div class="form-group">
                             <label for="name" id="lblName">Train Name</label>
                             <br>
-                            <input class= "form-control" type="text" id="name" autofocus="autofocus">
+                            <input class="form-control" type="text" id="name" autofocus="autofocus">
                         </div>
                         <div class="form-group">
 
                             <label for="destination" id="lblDestination">Destination</label>
                             <br>
-                            <input class= "form-control" type="text" id="destination">
+                            <input class="form-control" type="text" id="destination">
 
                         </div>
                         <div class="form-group">
 
                             <label for="firstTime" id="lblFirstTime">First Train Time (HH:mm -military time)</label>
                             <br>
-                            <input class= "form-control" type="text" id="firstTime">
+                            <input class="form-control" type="text" id="firstTime">
 
                         </div>
                         <div class="form-group">
 
                             <label for="frequency" id="lblFrequency">Frequency (min)</label>
                             <br>
-                            <input class= "form-control" type="text" id="frequency">
+                            <input class="form-control" type="text" id="frequency">
 
 
                         </div>
 
-                         <button class="btn btn-primary" id="btnSubmit" type="submit">Submit</button>
+                        <button class="btn btn-primary" id="btnSubmit" type="submit">Submit</button>
                     </form>
                 </div>
-
-
             </main>
-
-
-
         </div>
+    </div>
 
 
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-        <script src="assets/javascript/app.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
 
 </body>
 

@@ -33,13 +33,9 @@
     var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
     console.log(firstTimeConverted);
   
-    // Current Time
-    var currentTime = moment();
-    var currentTimeConverted=moment(currentTime).format("hh:mm");
-    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-  
+   
     // Difference between the times
-    var diffTime = moment(currentTimeConverted, "minutes").diff(moment(firstTimeConverted), "minutes");
+    var diffTime = moment(nowFormatted, "minutes").diff(moment(firstTimeConverted), "minutes");
     console.log("DIFFERENCE IN TIME: " + diffTime);
   
     // Time apart (remainder)
@@ -52,7 +48,9 @@
     
   
     // Next Train
-    var nextTrain =moment(currentTimeConverted).add(tMinutesTillTrain, "minutes");
+    var nextTrain =moment(nowFormatted, "minutes").add(tMinutesTillTrain, "minutes");
+
+    console.log(nextTrain);
   
     
     var newRow = $("<tr>");
@@ -81,7 +79,7 @@
 
     $("#schedContainer").append(newRow);
 
-
+  
     database.ref().push({
         trainName: trainName,
         destination: destination,
@@ -102,28 +100,24 @@ database.ref().on("child_added", function(childSnapshot) {
     console.log(childSnapshot.val().firstTime);
     console.log(childSnapshot.val().dateAdded);
 
-  var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
-  console.log(firstTimeConverted);
+    var now= moment();
+    var nowFormatted= moment(now).format("hh:mm");
 
-  // Current Time
-  var currentTime = moment();
-  console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-
-  // Difference between the times
-  var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-  console.log("DIFFERENCE IN TIME: " + diffTime);
-
-  // Time apart (remainder)
-  var tRemainder = diffTime % frequency;
-  console.log(tRemainder);
-
-  // Minute Until Train
-  var tMinutesTillTrain = frequency - tRemainder;
-  console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+    var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+    console.log(firstTimeConverted);
   
 
-  // Next Train
-  var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    var diffTime = moment(nowFormatted, "minutes").diff(moment(firstTimeConverted), "minutes");
+    console.log("DIFFERENCE IN TIME: " + diffTime);
+  
+    var tRemainder = diffTime % frequency;
+    console.log(tRemainder);
+  
+    // Minutes Until Train
+    var tMinutesTillTrain = frequency - tRemainder;
+    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+    var nextTrain = moment(nowFormatted).add(tMinutesTillTrain, "minutes");
+
 
     
     // full list of items to the well
@@ -192,5 +186,4 @@ function calcMinutesAway(frequency, firstTime){
 
     return nextTrain;
    
-
 }
