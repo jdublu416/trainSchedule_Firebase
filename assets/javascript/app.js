@@ -54,7 +54,10 @@ $("#btnSubmit").on("click", function(event) {
     newRow.append(newNextTrain);
     newRow.append(newtMinutesTillTrain);
 
-    $("#schedContainer").append(newRow);
+    //I honestly don't know why I need this line of code (59). This double documents the rows in the table. I commented it out for
+    //that reason.
+
+    // $("#schedContainer").append(newRow);
 
   
     database.ref().push({
